@@ -14,8 +14,8 @@ namespace TaskApp
         {
             Console.WriteLine("Введите размер массива случайных чисел:");
             int n = Convert.ToInt32(Console.ReadLine());
-            Func<object, int[]> func1 = new Func<object, int[]>(CreateArray);    
-            Task<int[]> task1 = new Task<int[]>(func1,n);
+            Func<object, int[]> func1 = new Func<object, int[]>(CreateArray);
+            Task<int[]> task1 = new Task<int[]>(func1, n);
 
 
             Action<Task<int[]>> act1 = new Action<Task<int[]>>(PrintArr);
@@ -49,7 +49,7 @@ namespace TaskApp
             int[] arr = task.Result;
             int max = arr[0];
             foreach(int a in arr) {
-                if(max<a) {
+                if(max < a) {
                     max = a;
                 }
             }
@@ -74,6 +74,6 @@ namespace TaskApp
             Console.WriteLine();
 
         }
-        
+
     }
 }
