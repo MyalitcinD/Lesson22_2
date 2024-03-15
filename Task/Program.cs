@@ -28,8 +28,8 @@ namespace TaskApp
             Task<int> task4 = task1.ContinueWith<int>(func3);
             task1.Start();
             task2.Wait();
-            Console.WriteLine(task3.Result);
-            Console.WriteLine(task4.Result);
+            Console.WriteLine($"Summ = { task3.Result}");
+            Console.WriteLine($"Max = { task4.Result}");
             Console.ReadKey();
 
         }
